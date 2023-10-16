@@ -1,0 +1,62 @@
+/* PhotoList.css */
+.photo-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
+}
+
+.photo-card {
+  cursor: pointer;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  overflow: hidden;
+  transition: transform 0.2s;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.photo-card:hover {
+  transform: scale(1.05);
+}
+
+.photo-img {
+  width: 100%;
+  max-height: 200px; /* Set a maximum height for the images */
+  display: block;
+  margin: 0; /* Remove any margin */
+  padding: 0; /* Remove any padding */
+}
+
+.user-info {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+}
+
+.user-profile-photo {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.likes {
+  margin-left: auto;
+  font-weight: bold;
+  color: #f76d57;
+}
+
+/* Media query for responsiveness */
+@media (max-width: 768px) {
+  .photo-card {
+    max-width: 100%;
+  }
+}

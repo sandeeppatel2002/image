@@ -1,0 +1,22 @@
+/* App.css */
+.App {
+  text-align: center;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 28px;
+  margin: 10px 0;
+}
+
+/* Add some styling for the SearchBar and PhotoList components */
+.SearchBar {
+  margin-bottom: 20px;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 24px;
+  }
+}
