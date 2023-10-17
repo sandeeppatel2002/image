@@ -28,6 +28,7 @@
 .photo-header {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
 }
@@ -67,7 +68,7 @@
 .photo-details {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
   flex-wrap: wrap;
   align-items: center;
   margin-bottom: 5px;
