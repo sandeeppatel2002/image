@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import PhotoDetail from "../photodetail/PhotoDetail";
 import "./PhotoList.css"; // Import the CSS file
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCheckSquare, faThumbsUp } from "@fortawesome/fontawesome-free-solid";
 
 function PhotoList({ photos }) {
   const [selectedPhoto, setSelectedPhoto] = useState(null);
@@ -15,7 +17,7 @@ function PhotoList({ photos }) {
 
   return (
     <div className="photo-list">
-      {photos.map((photo) => (
+      {photos.slice(0, Math.ceil(photos.length)).map((photo) => (
         <div
           key={photo.id}
           className="photo-card"
@@ -35,12 +37,16 @@ function PhotoList({ photos }) {
                 alt=""
                 className="user-profile-photo"
               />
-              <p>{photo.user.name}</p>
+              <h3>{photo.user.name}</h3>
             </div>
-            <p className="likes">{photo.likes} Likes</p>
+            <p className="likes">
+              {photo.likes}
+              <FontAwesomeIcon icon={faThumbsUp} />
+            </p>
           </div>
         </div>
       ))}
+
       {selectedPhoto && (
         <PhotoDetail photo={selectedPhoto} onClose={closePhotoDetail} />
       )}
@@ -49,3 +55,30 @@ function PhotoList({ photos }) {
 }
 
 export default PhotoList;
+
+{
+  /* <div
+key={photo.id}
+className="photo-card"
+onClick={() => {
+  openPhotoDetail(photo);
+}}
+>
+<img
+  src={photo.urls.regular}
+  alt={photo.alt_description}
+  className="photo-img"
+/>
+<div className="user-info">
+  <div className="user">
+    <img
+      src={photo.user.profile_image.large}
+      alt=""
+      className="user-profile-photo"
+    />
+    <p>{photo.user.name}</p>
+  </div>
+  <p className="likes">{photo.likes} Likes</p>
+</div>
+</div> */
+}

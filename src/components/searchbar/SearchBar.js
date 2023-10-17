@@ -10,13 +10,16 @@ function SearchBar({ onSearch }) {
 
   return (
     <div className="search-bar">
-      <input
-        type="text"
-        placeholder="Search for photos..."
-        value={query}
-        onChange={(e) => setQuery(e.target.value)}
-      />
-      <button onClick={handleSearch}>Search</button>
+      <h1>Download High Quality Images by creators</h1>
+      <div className="search-input">
+        <input
+          type="text"
+          placeholder="Search for photos..."
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+        />
+        <button onClick={handleSearch}>Search</button>
+      </div>
     </div>
   );
 }

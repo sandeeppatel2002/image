@@ -17,7 +17,7 @@ function App() {
         params: {
           query: query,
           page: 1,
-          per_page: 50,
+          per_page: 40,
         },
         headers: {
           Authorization: `Client-ID ${UNSPLASH_API_KEY}`,
@@ -41,7 +41,6 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Download High Quality Images by creators</h1>
       <SearchBar onSearch={handleSearch} />
       <PhotoList photos={photos} />
     </div>

@@ -1,35 +1,73 @@
-/* SearchBar.css */
+/* Default styles for larger screens */
 .search-bar {
-  display: flex;
-  align-items: center;
-  background-color: #f0f0f0;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url("back.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: #fff;
+  padding: 40px 0;
+  text-align: center;
+  position: relative;
+  margin: 0px 0px 20px 0px;
+  border-bottom: 4px solid #aeaeae;
+}
+
+.search-bar h1 {
+  font-size: 32px;
+  margin: 0;
   padding: 10px;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-weight: bold;
 }
 
-input[type="text"] {
-  flex: 1;
-  padding: 8px;
+.search-input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.search-input input {
+  padding: 15px;
+  width: 400px;
   border: none;
-  border-radius: 5px;
-  outline: none;
-  background-color: #f8f8f8;
-  font-size: 16px;
-  color: #333;
+  border-radius: 30px;
   margin-right: 10px;
+  font-size: 18px;
+  background: rgba(255, 255, 255, 0.9);
+  color: #333;
+  outline: none;
 }
 
-button {
-  padding: 8px 20px;
+.search-input button {
   background-color: #007bff;
   color: #fff;
   border: none;
-  border-radius: 5px;
+  border-radius: 30px;
+  padding: 15px 30px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  font-size: 18px;
+  font-weight: bold;
+  transition: background-color 0.2s;
 }
 
-button:hover {
+.search-input button:hover {
   background-color: #0056b3;
+}
+
+.search-input input:hover {
+  background: rgba(255, 255, 255, 0.95);
+  transition: background 0.2s;
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 768px) {
+  .search-input {
+    flex-direction: column; /* Stack the input and button vertically */
+  }
+
+  .search-input input {
+    width: 60%; /* Expand the input to full width */
+    margin-bottom: 10px; /* Add some spacing between input and button */
+  }
 }

@@ -1,20 +1,26 @@
 /* PhotoList.css */
+
 .photo-list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 20px;
-  justify-content: center;
-  padding: 20px;
+  grid-template-columns: repeat(3, 1fr); /* Three columns */
+  gap: 16px; /* Spacing between items */
+  justify-items: center; /* Center-align items horizontally */
+  align-content: flex-start; /* Align items at the top of the container */
+  align-items: flex-end; /* Align items at the bottom of each column */
+  margin: 0 20px; /* Add margin to the left and right sides */
 }
 
 .photo-card {
-  cursor: pointer;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
   overflow: hidden;
+  cursor: pointer;
   transition: transform 0.2s;
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  align-items: center;
+  width: 100%; /* Occupy full width of the column */
+  margin: 8px; /* Add margin to the left and right sides */
   position: relative;
 }
 
@@ -24,39 +30,93 @@
 
 .photo-img {
   width: 100%;
-  max-height: 200px; /* Set a maximum height for the images */
-  display: block;
-  margin: 0; /* Remove any margin */
-  padding: 0; /* Remove any padding */
+  max-height: 200px; /* Reduce the maximum height */
+  object-fit: cover;
 }
 
 .user-info {
-  padding: 10px;
+  display: none; /* Initially hide user info */
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px; /* Decrease padding for a smaller section */
+  text-align: center;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: rgba(74, 74, 74, 0.1);
+  transition: transform 1s;
+}
+.user-info .user .user-profile-photo {
+  height: 20%;
+  width: 20%;
+}
+.user-info .user h3 {
   display: flex;
   align-items: center;
+  color: #ffffff;
 }
 
-.user {
+.user-info p {
+  margin: 0;
+  font-weight: 600;
+  padding: 0 8px;
+  color: #ffffff;
+  font-size: 14px; /* Decrease font size for smaller text */
+}
+
+.user-info .likes {
   display: flex;
   align-items: center;
+  font-size: 14px; /* Decrease font size for smaller text */
+  color: #ffffff;
+  margin: 0px 16px 0px 0px; /* Decrease margin for smaller spacing */
 }
 
-.user-profile-photo {
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  margin-right: 10px;
+.user-info .likes .fa-thumbs-up {
+  margin-left: 4px; /* Decrease margin for smaller spacing */
+  color: #d6d6d6;
 }
 
-.likes {
-  margin-left: auto;
-  font-weight: bold;
-  color: #f76d57;
+.photo-card:hover .user-info {
+  display: flex; /* Show on hover */
+  transform: translateY(0); /* Slide up on hover */
 }
 
-/* Media query for responsiveness */
 @media (max-width: 768px) {
+  .photo-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .user-info .user h3 {
+    font-size: 14px;
+  }
+  .user-info .likes {
+    font-size: 12px;
+  }
+
+  .user-info .likes .fa-thumbs-up {
+    margin-left: 4px;
+  }
+}
+
+/* Styles for smaller screens */
+@media (max-width: 480px) {
+  .photo-list {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  .user-info .user h3 {
+    font-size: 16px;
+  }
   .photo-card {
-    max-width: 100%;
+    margin: 4px;
+  }
+
+  .user-info .likes {
+    font-size: 14px;
+  }
+
+  .user-info .likes .fa-thumbs-up {
+    margin-left: 4px;
   }
 }

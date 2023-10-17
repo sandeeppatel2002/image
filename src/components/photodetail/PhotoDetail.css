@@ -13,6 +13,9 @@
 }
 
 .photo-detail-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   background: #fff;
   padding: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -24,17 +27,26 @@
 
 .photo-header {
   display: flex;
+  flex-direction: row;
   align-items: center;
   margin-bottom: 20px;
 }
 
 .user-profile-photo {
-  width: 30px;
-  height: 30px;
+  width: 30%;
+  height: 30%;
   border-radius: 50%;
   margin-right: 10px;
 }
-
+.user {
+  display: flex;
+  flex-direction: row;
+  justify-content: baseline;
+}
+.user-profile-photo {
+  height: 20%;
+  width: 20%;
+}
 .user-name {
   font-weight: bold;
 }
@@ -48,13 +60,17 @@
 .photo-info {
   margin-top: 20px;
 }
+.photo-info .alt-description {
+  font-weight: 12px;
+}
 
-.photo-details,
-.user-social {
+.photo-details {
   display: flex;
+  flex-direction: row;
+  justify-content: space-around;
   flex-wrap: wrap;
   align-items: center;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 
 .likes-count,
@@ -68,13 +84,13 @@
 }
 
 .user-social a {
-  color: #007bff;
+  color: #bfd8f2;
   text-decoration: none;
 }
 
 .download-button,
 .close-button {
-  background-color: #007bff;
+  background-color: #b8c6d5;
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -86,5 +102,34 @@
 
 .download-button:hover,
 .close-button:hover {
-  background-color: #0056b3;
+  background-color: #99b3cf;
+}
+
+@media (max-width: 768px) {
+  .photo-header {
+    margin-bottom: 10px; /* Reduce margin for smaller screens */
+  }
+  .user-profile-photo {
+    width: 60px; /* Adjust width for smaller profile photos */
+    height: 60px; /* Adjust height for smaller profile photos */
+  }
+  .photo-info .alt-description {
+    font-size: 10px; /* Decrease font size for smaller screens */
+  }
+  .photo-details {
+    margin-bottom: 10px; /* Reduce margin for smaller screens */
+  }
+  .likes-count,
+  created-date,
+  icon,
+  icon-label,
+  portfolio-link,
+  download-button,
+  close-button {
+    margin: 5px 0; /* Adjust margins for smaller screens */
+  }
+  .download-button,
+  close-button {
+    padding: 8px 16px; /* Adjust padding for smaller screens */
+  }
 }
